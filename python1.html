@@ -1,0 +1,151 @@
+<h2>Python</h2>
+<h3>Displaying results</h3>
+<p>The <strong>print</strong> function is the main way of displaying output in Python:</p>
+<pre>print("hello world")</pre>
+<p>displays the text "hello world" (without the quotes). Text enclosed by matching pairs of single or double quotes is called a <em>string </em>(we will see other ways of making a string later).</p>
+<p>The placeholder <strong>{}</strong> can be used with the string <strong>format</strong> method to denote the location to insert other values into a string. For example,</p>
+<pre>print("Today is my first day of {} class.".format("informatics"))</pre>
+<p>displays "Today is my first day of informatics class."</p>
+<p>We can use as many placeholders as we want; their values are, by default, inserted in order:</p>
+<pre>print("Did you know that {} founded {}?".format("Clara Barton", "the American Red Cross"))</pre>
+<p>displays "Did you know that Clara Barton founded the American Red Cross?"</p>
+<p>To make text with placeholders easier to read, you can give them names and refer to those names in the format arguments. For example:</p>
+<pre>print("Hi my name is {person1}. Nice to meet you {person1}; I am {person2}."<br />&nbsp; &nbsp; &nbsp; .format(person1="Bob", person2="Sally"))</pre>
+<p>displays "Hi my name is Bob. Nice to meet you Bob; I am Sally." Note that since we were inside the call to print, we can move the .format to the next line to make it easier to read. We'll use a variant of this when we're using NoSQL databases.</p>
+<p>To learn more about the format method, including ways to change formatting, see the relevant section of the <a href="https://docs.python.org/3/library/string.html#formatstrings">Python documentation</a>.</p>
+<h3>Creating variables</h3>
+<p>A variable is a name that is assigned to an object or value; this assignment is typically done through the assignment operator = as in:</p>
+<pre>body_temperature = 37.2<br />heart_count = 1<br />note = 'Patient reported stomachache.'<br />body_parts = {'head', 'shoulders', 'knees', 'toes'}<br />hospital_visits = ['June 3, 2019', 'June 5, 2019', 'December 3, 2027', 'March 5, 2039']</pre>
+<p>Here the variables body_temperature, heart_count, note, body_parts, and hospital_visits are, respectively, a float, an int, a string,&nbsp; a set, and a list. The set and list here contain strings, but they could just as easily contain numbers or other data types. (For reasons beyond the scope of this course, a set cannot contain lists, but a list can contain lists and sets.)</p>
+<p>We use variables to store results needed for later calculations (see Arithmetic, below); e.g.</p>
+<pre>right_hand_phalanges = 14<br />left_hand_phalanges = 14<br />right_foot_phalanges = 14<br />left_foot_phalanges = 14<br />total_phalanges = right_hand_phalanges + left_hand_phalanges + right_foot_phalanges + left_foot_phalanges</pre>
+<p>(Notice that to make our code readable, we always give meaningful variable names.)</p>
+<p>A <strong>floating point</strong> number is a number offering a certain number of bits of precision (enough for about 15 digits) regardless of where the decimal point falls. This is the typical way "decimals" are represented on computers; for more, see the <a href="https://docs.python.org/3/tutorial/floatingpoint.html">Python tutorial's discussion on floating point numbers</a>.</p>
+<p>An <strong>int</strong> represents an integer, that is, a number with no decimal component. For the most part, these can be used interchangably with floating point numbers that happen to be integers, but occasionally the difference matters (e.g. when working with non-Python code, or when generating a&nbsp;<a href="https://docs.python.org/3/library/stdtypes.html#range"><strong>range</strong></a>).</p>
+<p>A <strong>string</strong> is a sequence of characters stored exactly, such as the free-text doctor's note shown here. These are indicated using matching pairs of single or double quotes. Alternatively matching sets of three quotes can be used to indicate the beginning and ending of a multi-line string, such as:</p>
+<pre>extended_note = """Patient reported a stomachache.<br /><br />Tests for abdominal muscle injury negative. Recommend monitoring and antacid.<br />"""</pre>
+<p>Placeholders can be used with strings; these are indicated using curly brackets. The brackets are replaced with values passed into the <a href="https://docs.python.org/3/library/stdtypes.html#str.format"><strong>format</strong></a> method as of the time of the format call. For example,</p>
+<pre>note = "The patient presented with {} heart(s).".format(heart_count)</pre>
+<pre>note = "The patient presented with {} heart(s) and a body temperature of {}.".format(heart_count, body_temperature)</pre>
+<p>You might have noticed that we saw the format method above when we talked about the print function; passing named arguments works in general, not just when printing:</p>
+<pre>note = "The patient presented with {heart} heart(s) and a body temperature of {temp}.".format(heart=2, temp=37)</pre>
+<p>Using named arguments makes it easier to tell what data the placeholder is supposed to represent and removes the need to worry about argument order. Using placeholders and format is extremely useful when dynamically creating text.</p>
+<p>A <strong>list</strong> represents an ordered collection of data. Here for example, hospital_visits is a list of visit dates. We can use square brackets to indicate an item in a given position in the list (starting from 0). That is, the first item in the list is</p>
+<pre>hospital_visits[0]</pre>
+<p>The third visit date was thus:</p>
+<pre>hospital_visits[2]</pre>
+<p>(Remember, we count the visits as: 0, 1, 2.)</p>
+<p>Negative numbers can be used to indicate position in the list as measured from the end; i.e. the last hospital visit was in</p>
+<pre>hospital_visits[-1]</pre>
+<p>We can use the assignment operator to update the value of an item in a list; for example if the next-to-last (i.e. index -2) hospital visit actually happened on December 3, 2028, we can change the existing value via:</p>
+<pre>hospital_visits[-2] = "December 3, 2028"</pre>
+<p>If our patient has a new hospital visit, we can&nbsp;<strong>append</strong> it to the list, with, e.g.</p>
+<pre>hospital_visits.append("December 27, 2042")</pre>
+<p>Lists have several other methods of potential interest: the <strong>insert</strong> method allows inserting an element into an arbitrary position in the list; the&nbsp;<strong>count</strong> method counts the occurrences of a given value; the&nbsp;<strong>index</strong> method finds the first location; the&nbsp;<strong>sort</strong> method can be used to sort the list (and the sorting rule may optionally be specified).</p>
+<p>The length of a list (in our case, the total number of visits) can be determined using&nbsp;<strong>len</strong>; e.g.</p>
+<pre>len(hospital_visits)</pre>
+<p>It is occasionally useful to have a list-like object representing all the numbers (integers) between two values. This is done using <strong>range</strong>. To get a list-like object of all integers between 7 (included) and 42 (not included), we use</p>
+<pre>ages = range(7, 42)</pre>
+<p>Note: the last value is always&nbsp;<em>not included</em>.</p>
+<p>In most ways, a range behaves like a list; e.g. to get the fourth (index 3) age, we use</p>
+<pre>ages[3]</pre>
+<p>The difference is that this value cannot be changed; ages is the specified number range so the index 3 entry must always be 10. To allow assigning values, we could have instead created a list from the range:</p>
+<pre>ages = list(range(7, 42))</pre>
+<p>Python provides a number of other built-in data types, including dictionaries (described below), complex numbers (e.g. 3+2j, useful for algorithms, but unlikely to show up in raw health data), booleans (True, False), long integers, byte arrays, <a href="https://www.w3schools.com/python/python_tuples.asp">tuples</a>, and more.</p>
+<h3>Arithmetic</h3>
+<p>Python supports the basic arithmetic operators: addition (+), subtraction (-), multiplication (*), division (/), exponentiation (**).</p>
+<pre>number_of_fingers = 1 + 1 + 1 + 1 + 1<br />hours_in_a_year = 24 * 365</pre>
+<p>Order of operations and parentheses follow the normal rules of mathematics:</p>
+<pre>principal = 1000 * 1.05 ** 30<br />something_else_entirely = (1000 * 1.05) ** 30<br />volume_of_tumor = 4. / 3 * 3.14 * 2 ** 3</pre>
+<p>(Warning: Prior to Python 3, Python used what was known as integer division where if two integers e.g. 4 and 3 were divided, it would return an integer; i.e. it would drop the fractional part, and 4 / 3 would return 1 instead of 1.333. The 4. in the above line forces the 4 to be a float and therefore even in older versions of Python the division would return 1.333.)</p>
+<p>There are additional arithmetic operators, including: matrix multiplication (@), integer division (//) and modulus (%).</p>
+<h3>Making choices</h3>
+<p>Using an <strong>if</strong> statement, code can do different things depending on different conditions. For example, the code:</p>
+<pre>temperature = 39<br />if temperature &gt; 38:<br />    print('Fever detected. NSAIDs indicated.')</pre>
+<p>prints out the message, because the temperature is above the specified threshold.</p>
+<p>A colon (:) begins a block of code that only happens if the condition is satisfied. The entire block of code must be indented:</p>
+<pre>if 2 &gt; 3:<br />    print('this will never display')<br />    print('nor will this')<br />print('this on the other hand always prints out')</pre>
+<p>Python's comparison operators include:</p>
+<pre>    &gt;     greater than<br />    &gt;=    greater than or equal<br />    &lt;     less than<br />    &lt;=    less than or equal<br />    ==    equal<br />    !=    not equal</pre>
+<p>In particular, notice that equality testing uses two equal signs (==).</p>
+<pre>if diagnosis == 'diabetes':<br />    print('Consider Metformin or insulin.')<br />else:<br />    print('No treatment recommendations at this time.')</pre>
+<p>The else block gets executed when the condition is not true.</p>
+<p>More complicated comparisons can be formed by combining comparisons using&nbsp;<strong>and</strong>,&nbsp;<strong>or</strong>, and&nbsp;<strong>not.</strong></p>
+<pre>if diagnosis == 'diabetes' and not metformin_tried:<br />    print('Try Metformin.')</pre>
+<p>We can test if an item is in (or not in) a list using the&nbsp;<strong>in</strong> and&nbsp;<strong>not in</strong> operators, respectively:</p>
+<pre>'June 5, 2019' in hospital_visits</pre>
+<p>displays True</p>
+<pre>'5 June 2019' in hospital_visits</pre>
+<p>displays False</p>
+<p>Why the difference? Because for now, we're treating dates as strings of characters, nothing more. So since the date was written in the first but not the second way, only the first returns True. Tomorrow, we'll handle dates in a more sophisticated way using the dateutil module.</p>
+<h3>Loops</h3>
+<p>Computers are great for doing similar calculations repeatedly. If we know in advance the set of things that we want to use for a calculation, we can use a <strong>for</strong> loop. For example, the following prints a list of today's patients:</p>
+<div class="page" title="Page 7">
+<div class="section">
+<div class="layoutArea">
+<div class="column">
+<pre>patients = ['Blackwell, E', 'Lister, J', 'Vesalius, A', 'Freud, S', 'Salk, J']<br />for patient in patients:<br />    print('Patient {name} is scheduled for a consult today.'.format(name=patient)) </pre>
+<p>As with if statements, the block of code that goes with the for is indented.</p>
+<p>Using loops like this allows us to not have to write the same code twice. This is a general programming concept called <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">Don't Repeat Yourself.</a> Functions and methods (described below) offer another way to avoid repeating ourselves. This allows us to reduce our effort and avoid introducing copy-paste bugs.</p>
+<p>In practice, we know more than just a single piece of data; we may have a list of lists of data grouping related information. For example, suppose that instead of the above we paired patients with their birth years:</p>
+<pre>patients = [['Blackwell, E', 1821],<br />            ['Lister, J', 1827],<br />            ['Vesalius, A', 1514],<br />            ['Freud, S', 1856],<br />            ['Salk, J', 1914]]</pre>
+<p>We can then loop over each patient getting the name and birth year by giving each of these variable names in the for statement, separated by commas:</p>
+<pre>for name, year in patients:<br />    print('Meeting with {} today, who was born in {}.'.format(name, year))</pre>
+<p>If the lists of patient data were longer, we would simply add more comma-separated variable names in the for statement.</p>
+<p>(You may have noticed that there is no inherent reason why birth year should come second and name first besides that consistency is needed. Dictionaries, described below, allow avoiding ordering data.)</p>
+<p>As we loop over our data, we may want to do different things based on the data. For example, we can print the list of all patients over 150 years old:</p>
+<pre>for name, year in patients:<br />    if 2019 - year &gt; 150:<br />        print('Patient {name} is over 150 years old.'.format(name=name))</pre>
+<p>If we know a loop should stop when a certain condition has been reached, we can check for that condition with an if statement and leave the loop early by using <strong>break</strong>; for example, the following prints the squares of the numbers 1, 3, 5, 7, and 9 except it stops when the square would be bigger than 40 and does not print it or anything after it:</p>
+<pre>numbers = [1, 3, 5, 7, 9]
+for number in numbers:<br />    if number * number &gt; 40:<br />        break
+    print(number * number) </pre>
+<p>Note: order matters! If the print call came before the if statement, the output would be different. How would it be different and why?</p>
+<p>On rare occasions, it is useful to know the index that goes with the value being looped over. We do this using <strong>enumerate</strong> as in:</p>
+<pre>for i, word in enumerate(['the', 'quick', 'brown', 'fox', 'jumped']):<br />&nbsp; &nbsp; print('The {}th word is {}.".format(i, word))</pre>
+<p>running this prints out a list of locations and the associated word. enumerate automatically pairs each item with its index. Recall that the first position in a list is position 0.</p>
+<p>The <a href="https://www.w3schools.com/python/python_while_loops.asp">while</a> statement offers another way of defining loops in Python. For both&nbsp;<strong>for</strong> and&nbsp;<strong>while</strong>, loops can be exited early (typically based on the choice made in an <strong>if</strong> statement) using the&nbsp;<strong>break</strong> keyword.</p>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h3>Dictionaries</h3>
+<p>Dictionaries provide list-like syntax for data that has no natural order, and is best identified by named <em>keys </em>instead of consecutively numbered indices. For example, the dictionary:</p>
+<pre>person = {<br />    'name': 'Barton, C', <br />    'birthyear': 1821<br />}</pre>
+<p>has two keys: 'name' and 'birthyear'. As with lists, we read and write specific fields using [] notation; e.g.</p>
+<pre>person['founderOf'] = 'American Red Cross'<br />print('{} founded the {}.'.format(person['name'], person['founderOf'])</pre>
+<p>There is no natural 0th, 1th, etc item as the three types of data here: name, birthyear, founderOf have no inherent order. While we cannot access an item of data by number, there is still a certain number of pieces of data known in the dictionary; this is returned by the&nbsp;<strong>len</strong> function, e.g.&nbsp;<strong>len(person)</strong>, which here would return 3, as there are 3 <em>keys</em> (name, birthyear, founderOf) and associated <em>values</em>.</p>
+<p>We can get an iterable (an object that can be looped over) of all the keys (fields) in the dictionary data using person<strong>.keys()</strong> and of all the values using person.<strong>values()</strong>. To turn these iterables into lists, we use the list function; e.g. <strong>all_keys = list(person.keys())</strong>.</p>
+<p>We can loop over all keys and values together using the&nbsp;<strong>items</strong> method:</p>
+<pre>for fact_type, fact_value in person.items():<br />    print('{}: {}'.format(fact_type, fact_value))</pre>
+<p>More complicated data structures can be built by combining lists and dictionaries. For example, we could restructure the patients data from before as follows:</p>
+<pre>patients = [{<br />                 'name': 'Blackwell, E', <br />                 'birthyear': 1821<br />            },<br />            {<br />                 'name': 'Lister, J',<br />                 'birthyear': 1827<br />            },<br />            {<br />                'name': 'Vesalius, A', <br />                'birthyear': 1514<br />            },<br />            {<br />               &nbsp;'birthyear': 1856,<br />                'name': 'Freud, S' <br />            },<br />            {<br />                'name': 'Salk, J', <br />               &nbsp;'invented': 'Polio vaccine',<br />                'birthyear': 1914<br />            }]</pre>
+<p>Note that for Freud, we have listed his birthyear before his name; this has no effect on any analysis code because we only identify the type of data based on the key not on the order. We have also included additional information about Jonas Salk. Analyses that do not require this type of information simply ignore the extra information in a dictionary.</p>
+<p>The code printing out the name and birth years becomes:</p>
+<pre>for patient in patients:<br />    print('Meeting with {} today, who was born in {}.'.format(patient['name'], patient['birthyear']))</pre>
+<p>The <strong>in</strong> operator evaluates to True if a certain field is in a dictionary; otherwise it is False. Accessing a field that is not present is an error (but the <a href="https://www.w3schools.com/python/ref_dictionary_get.asp"><strong>get</strong></a> method provides an alternative). We can use&nbsp;<em>in</em> to find and print a list of our patients inventions:</p>
+<pre>for data in patients:<br />    if 'invented' in data:<br />        print('{} invented {}'.format(data['name'], data['invented']))</pre>
+<p>You may wonder why in our exampled <em>patients</em> remains a list instead of itself being a dictionary with the keys being names. The answer is simple: names are not unique but dictionary keys must be. For a time, social security numbers were often used to disambiguate people. This is a problem for many reasons, but two major reasons not to do this: (1) using SSNs increases the risk of identity theft, and (2) not everyone has a SSN (e.g. most non-Americans who have never earned money in the United States).</p>
+<p>In practice, a unique identifier is assigned to every patient.</p>
+<h3>Functions</h3>
+<p>Functions offer another way of avoiding repetition. They can compute values or perform actions that are done multiple times. They are also used as a way of self-documenting code so that the purpose can be determined via the function name.</p>
+<p>A value or values may be returned from a function using the&nbsp;<strong>return</strong> statement:</p>
+<pre>def age(birthyear):<br />    return 2019 - birthyear</pre>
+<p>Note that as with&nbsp;<strong>if</strong>,&nbsp;<strong>for, while</strong>, etc... the body of a function definition must be indented and preceeded with a colon.</p>
+<p>Here, birthyear is an argument. Multiple arguments may be specified:</p>
+<pre>def volume_of_rectangular_tumor(length, width, height):<br />    return length * width * height</pre>
+<p>Variables assigned inside of a function are generally only available within that function; a function may read variables defined in a higher scope.</p>
+<p>Some useful built-in functions include: len, max, sum.</p>
+<p>Optional values may be specified as keyword arguments:</p>
+<pre>def advance_value(value, increment=1):<br />    return value + increment</pre>
+<h3>Methods</h3>
+<p>A method is like a function, but it operates on a given object. Syntactically, a method is invoked with the object, a dot, the method name, parentheses, and any arguments. (As with functions, methods can take positional arguments, keyword arguments, or a combination of the two.)</p>
+<p>For example, we have already seen the <strong>format</strong> method of a string. That method returns a new string with the placeholders replaced:</p>
+<pre>note = "His temperature was {temp} degrees.".format(temp=37)</pre>
+<p>Here the string was defined on the same line the method was invoked, but often these are separated, especially for complex objects:</p>
+<pre>template = "His temperature was {temp} degrees."<br />completed_note = template.format(temp=37)</pre>
+<p>The format method leaves the original template unchanged and returns a new one. Strings also have&nbsp; <strong>lower</strong> and&nbsp;<strong>upper</strong> methods that return lowercase and uppercase versions of the strings, respectively, without changing their values.</p>
+<p>Other methods, like a list's&nbsp;<strong>sort</strong> method (or like <strong>append</strong>, shown above) modify the object itself:</p>
+<pre class="p1"><span class="s1">names = ['Jones', 'Smith', 'Flintstone']<br /></span>names.sort()<br />print(names)  # displays <span class="s1">['Flintstone', 'Jones', 'Smith']<br /></span></pre>
+<p>The # here indicates a&nbsp;<em>comment</em>; that is, text the computer ignores that is used to make the code easier to read.</p>
+<p>(Every type of data can be sorted given an appropriate sorting rule; for more, see the <a href="https://docs.python.org/3/howto/sorting.html">Python tutorial on sorting</a>.)</p>
