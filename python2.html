@@ -1,0 +1,117 @@
+<p><span style="font-size: 1.5em;">Libraries (modules)</span></p>
+<p>Python provides many libraries (modules) to facilitate common calculations. Over 200 come with every Python installation, and many distributions (e.g. <a href="https://www.anaconda.com/distribution/">Anaconda</a>) include even more. Additional modules may be found and automatically installed by using pip (or conda), although you will not need to do that for this course.</p>
+<p>Libraries are loaded using the <strong>import</strong> statement; specific functions etc may be loaded using <strong>from</strong>. Dot notation is used to access items within the library.</p>
+<p>In this course, we will use:</p>
+<p><strong>dateutil</strong></p>
+<p>For working with dates.</p>
+<pre>from dateutil.parser import parse as parse_date<br />date1 = parse_date('1 Jan 1970')<br />date2 = parse_date('July 23, 2019')<br />print(date2.year)<br />print(date2.month)<br />print((date2 - date1).days)<br />print((date2 - date1).total_seconds())<br />major_events = {parse_date('Mar 10, 1876'): 'First telephone call',<br />                parse_date('1969-10-29'): 'ARPANET created',<br />                parse_date('3 December 1967'): 'First human heart transplant'}<br />print(major_events[parse_date('Oct 29, 1969')])</pre>
+<p><strong>pandas</strong></p>
+<pre>import pandas as pd<br />data = pd.read_csv('shared/mimic_demo/patients.csv')<br />data.head()  # run this interactively<br />data[['subject_id', 'row_id', 'gender']]  # run this interactively to display the data frame<br />data[['subject_id', 'row_id', 'gender']][:4] # same, but grabs the first four rows<br />data['dob'] = pd.to_datetime(data['dob'])  # process all the dates at one time, can compare with parse_date values</pre>
+<pre>for row in data.itertuples():<br />    print(row.dob, row.gender)</pre>
+<pre>x = pd.Series(range(10))<br />y = x * x<br />print(y)</pre>
+<p>A data frame's <strong>to_csv</strong> method can be used to store it as a csv file.</p>
+<p><strong>requests</strong></p>
+<p>For loading data from the web.</p>
+<pre>import requests<br />data = requests.get('https://senselab.med.yale.edu/_site/webapi/object.json/{id_}?woatts=23,24'.format(id_=279)).json()<br />print(data['object_name'])</pre>
+<p><strong>numpy</strong></p>
+<p>For linear algebra and vectorized mathematics.</p>
+<pre>import numpy as np<br />a = np.array([1, 5, 165])<br />print(a * 2)</pre>
+<p>Matrices may be created as two dimensional arrays:</p>
+<pre>a = np.array([[1, 2], [3, 4]])</pre>
+<p>The * operator behaves elementwise while @ performs matrix multiplication; i.e. compare&nbsp;<strong>a * a</strong> with&nbsp;<strong>a @ a</strong>.</p>
+<p><strong>pymongo</strong></p>
+<p>For connecting to MongoDB.</p>
+<pre>from pymongo import MongoClient<br />mongodb = MongoClient()  <br />test_db = mongod.test_db<br />test_collection = test_db.collection<br />test_collection.insert_one({'systolic': 120, 'temperature': 37})</pre>
+<p><strong>MySQLdb</strong></p>
+<p>For connecting to MySQL; can put query results into pandas.</p>
+<pre>import MySQLdb<br />import pandas as pd<br />db = MySQLdb.connect(host="localhost", user="username", passwd="password", db="dbname")<br />cur = db.cursor()<br />data = pd.read_sql("select insurance, diagnosis from Admissions where hospital_expire_flag=1", db)<br />data.head()
+</pre>
+<p><strong>plotnine&nbsp;</strong>(aka ggplot)</p>
+<pre>from plotnine import ggplot, aes, geom_point, geom_line, geom_bar, geom_text<br />my_data = pd.DataFrame({'time': [1, 2, 3, 4, 5], 'rabbits': [1, 4, 9, 16, 25]})<br />ggplot(my_data, aes(x='time', y='rabbits')) + geom_point() + geom_line()</pre>
+<pre>(ggplot(my_data, aes(x='time', y='rabbits'))<br />    + geom_bar(stat='identity', position='dodge', show_legend=False)<br />    + geom_text(aes(label='rabbits'), va='bottom', format_string='{} rabbits'))</pre>
+<p>Other modules commonly used in data science that we won't have time to talk about in this course include: <a href="https://docs.python.org/3/library/math.html">math</a>, <a href="http://scipy.org">scipy</a>, <a href="http://nltk.org">nltk</a>.</p>
+<h2>Basic file access</h2>
+<h3>Reading all of a file into a string</h3>
+<pre>with open('filename.txt') as my_file:<br />  &nbsp; file_contents = my_file.read()</pre>
+<h3>Reading a file line-by-line</h3>
+<pre>with open('filename.txt') as my_file:<br />&nbsp; &nbsp; for line in my_file:<br />&nbsp; &nbsp; &nbsp; &nbsp; # do something with the line (includes the newline character)<br />&nbsp; &nbsp; &nbsp; &nbsp; print(line)</pre>
+<h3>Encodings</h3>
+<p>Strings are represented in a computer's memory as a series of numbers. Given the wide diversity in human languages, the question then arises as to how to represent all possible characters; this led to the emergence of the <a href="https://en.wikipedia.org/wiki/Unicode">Unicode standard</a>, however for various reasons, Unicode code points are generally not used directly to encode characters on a disk, but instead one of a number of possible encodings are used instead. The most common is <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>, and Python 3 assumes UTF-8 by default but you can specify other encodings using the encoding keyword argument to open; e.g.:</p>
+<pre>with open('filename.txt', encoding='iso-8859-1') as my_file:<br />&nbsp; &nbsp; for line in my_file:<br />&nbsp; &nbsp; &nbsp; &nbsp; # do something with the line (includes the newline character)<br />&nbsp; &nbsp; &nbsp; &nbsp; print(line)</pre>
+<p>The Python documentation contains a <a href="https://docs.python.org/3.7/library/codecs.html#standard-encodings">list of supported encodings</a> and known aliases.</p>
+<h2>JSON</h2>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<h3><span class="kn">Writing to a file</span></h3>
+<p><span class="kn">Suppose data is a dictionary or list, possibly with nested dictionaries and lists, e.g. here a sampling of pubmed:</span></p>
+<div>
+<pre>data = {<br />  2: {"journal": "Biochemical and biophysical research communications",<br />      "mesh": ["Fourier Analysis", "Magnetic Resonance Spectroscopy"]},<br />  8: {"journal": "Biochemical pharmacology",<br />      "mesh": ["Amidohydrolases", "Animals", "Esterases"]}<br />}<br /><br /></pre>
+<p>then we can write this to a file using Python's json module:</p>
+<pre><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data.json'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    f.write(<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(data))</span></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<p>The file will look very similar to the way you would describe the data in Python, with the most notable differences being that strings are always enclosed in double quotes and null replaces None. By default, the content will all be written on a single line, which could be hard to read, but we can use the indent keyword to have Python automatically add indentation and line breaks to make it more readable, e.g.<br /><br /></p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<div>
+<pre><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data.json'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    f.write(<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(data, indent=4))</span></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython2">
+<h3>Reading from a file</h3>
+<p>To read data from a JSON file we use the json.load function:</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span></pre>
+<p>Similarly,<strong> json.loads</strong> loads JSON from a string instead of from a file.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2>Debugging</h2>
+<h3>Computer detected errors</h3>
+<p>Tracebacks, syntax errors, etc</p>
+<h3>Logic errors</h3>
+<p>What is wrong with this block of code?</p>
+<pre>temperature = [37.2, 37, 39, 38.5]
+
+# convert to degrees F from degrees C
+for temp in temperature:
+    temp = temp * 1.8 + 32
+
+print(temperature)</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
