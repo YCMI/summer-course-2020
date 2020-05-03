@@ -2,6 +2,8 @@
 
 <html>
     <!--
+        Edited from:
+
         Course website mockup
 
         Simplified BSD license; see license.txt
@@ -39,12 +41,15 @@
                 bottom: 0em;
                 width: 100vw;
             }
+            li {
+                padding-bottom: 0.5em;
+            }
         </style>
     </head>
     <body>
         <div class="container" id="maindiv">
             <h1>
-                Course name goes here
+                Introduction to Biomedical Data Science and Health Informatics
             </h1>
             <h3>
                 June 8, 2020 - June 12, 2020
@@ -52,105 +57,185 @@
             <br/><br/>
             <h4>Overview</h4>
             <p>
-                Join us to learn more about Topic 1 and Topic 2. The first few days will
-                focus on the theory and applications of Topic 1. Many of our examples will
-                build on each other throughout the course, so in order to get the most
-                out of this, students will need to attend all courses and do all exercises.
-                You will have opportunities to discuss the material and explore alternative
-                strategies with the instructors and the TAs as the course progresses. 
+                Join us for an introduction to basic biomedical data science knowledge and health
+                informatics skills. No previous experience is required.
+            </p>
+            <p>
+                Most lectures are available in advance via the links below, although Thursday's 
+                lecture will only be available as a live-stream on Thursday morning. Office hours
+                will be available in the mornings via Zoom to answer questions about the lectures.
+                The afternoons starting at 1pm will begin with a brief Q&A, followed by hands-on
+                exercises (also linked below) via Zoom.
+            </p>
+            <p>
+                We are using what is known as an inverted classroom structure, where class time
+                is focused on applying the material. An inverted classroom is one in which the 
+                class time is spent doing those tasks which would traditionally take place outside
+                of the classroom and vice versa. As such, class time is spent reviewing problem sets,
+                expounding on concepts with input from students, rather than the didactic relaying
+                of information. That information transmission is relegated to the students'
+                non-instructional time, through such methods as pre-recorded lectures, exercises
+                or reading material. This shift in structure requires a different investiture of
+                resources from the student, and as a result the incentives required have been found
+                to shift in response:
+                <ol>
+                    <li>Reviewing the material provided for each lecture, be it readings, exercises 
+                        or pre-recorded lectures is crucial for functioning in an inverted classroom.</li>
+                    <li>Classroom time is predominantly an exercise in information integration, 
+                        following both the thread of discussion and relating it to the student's 
+                        own skill level. Active learning is a must.</li>
+                    <li>As such, student reflection and conversing with instructors and making sure 
+                        skill development is taking apace with the content delivered is a key to 
+                        successful learning.</li>
+                </ol>
             </p>
             <h4>Preparing for the course</h4>
             <p>
-                This course is targeted for beginners in Topic 1, however if Topic
-                &alpha; is completely new to you, we encourage you to check out 
-                <a href="#">this tutorial</a> by some people on the basic art of &alpha;ing.
+                This course is targeted for beginners in informatics. However, if programming
+                is completely new to you, we encourage you to check out the introductory lecture for Harvard's
+                CS50, entitled <a href="https://www.youtube.com/watch?v=jjqgP9dpD1k">Computational Thinking</a>.
             </p>
             <p>
                 <span class="font-weight-bold">On the day of the course</span>,
-                bring a laptop computer that connects to the xyz-network.
+                you will need to be able to provide your own computer and internet connection.
             </p>
             
             <h4>Course material</h4>
             <div class="coursemodule">
                 <p>
-                    <span class="font-weight-bold">Day 1: An introduction to Topic 1</span>
+                    <span class="font-weight-bold">Monday: An introduction to Python for Data Science</span>
                 </p>
                 <ul>
                     <li>
-                        <a href="https://docs.google.com/presentation/d/1Jq4MEGtroW29mz9i15rk83JEFmEa2wonziFkP1Hjy40/edit?usp=sharing">Slides</a>
+                        <b>Basic calculations, variables, data types</b><br/>
+                        <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=152d48cf-a61a-4d62-8cbb-aba500372e48">Lecture (20m 2s)</a>
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                     <li>
-                        <a href="notes.html">Notes</a>
+                        <b>Functions, Methods, f-strings</b><br/>
+                        <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=348668a4-cc9f-4ba9-9771-aba5004a7abc">Lecture (24m 12s)</a>
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                     <li>
-                        <a href="https://colab.research.google.com/drive/1ow0K8V_wJA833E0DaDgKJI-jVazdpGpc">Exercises</a>
+                        <b>Looping (for loops) and making choices (if statements)</b><br/>
+                        Lecture (30m 23s)
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
+                    </li>
+                    <li>
+                        <b>Loading and using libraries (modules)</b><br/>
+                        Lecture
+                        &middot;
+                        Slides
+                        &middot;
+                        Exercises
+                    </li>
+                    <li>
+                        <b>Loading and manipulating data with pandas</b><br/>
+                        Lecture
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
+                    </li>
+                    <li>
+                        <b>Visualizing data with ggplot</b><br/>
+                        Lecture
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                 </ul>
             </div>
             <div class="coursemodule">
                 <p>
-                    <span class="font-weight-bold">Day 2: Applied Topic 1</span>
+                    <span class="font-weight-bold">Tuesday: Data Management and Databases</span>
                 </p>
                 <ul>
                     <li>
-                        <a href="https://docs.google.com/presentation/d/1Jq4MEGtroW29mz9i15rk83JEFmEa2wonziFkP1Hjy40/edit?usp=sharing">Slides</a>
+                        <b>Data management</b><br/>
+                        Lecture
+                        &middot;
+                        Slides
+                        &middot;
+                        Exercises
                     </li>
                     <li>
-                        <a href="notes.html">Notes</a>
-                    </li>
-                    <li>
-                        <a href="https://colab.research.google.com/drive/1ow0K8V_wJA833E0DaDgKJI-jVazdpGpc">Exercises</a>
+                        <b>Databases</b><br/>
+                        Lecture
+                        &middot;
+                        Slides
+                        &middot;
+                        Exercises
                     </li>
                 </ul>
             </div>
             <div class="coursemodule">
                 <p>
-                    <span class="font-weight-bold">Day 3: An introduction to Topic 2</span>
+                    <span class="font-weight-bold">Wednesday: Data cleaning and Data Visualization</span>
                 </p>
                 <ul>
                     <li>
-                        <a href="https://docs.google.com/presentation/d/1Jq4MEGtroW29mz9i15rk83JEFmEa2wonziFkP1Hjy40/edit?usp=sharing">Slides</a>
+                        <b>Data cleaning</b><br/>
+                        Lecture
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                     <li>
-                        <a href="notes.html">Notes</a>
-                    </li>
-                    <li>
-                        <a href="https://colab.research.google.com/drive/1ow0K8V_wJA833E0DaDgKJI-jVazdpGpc">Exercises</a>
+                        <b>Data visualization</b><br/>
+                        Lecture
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                 </ul>
             </div>
             <div class="coursemodule">
                 <p>
-                    <span class="font-weight-bold">Day 4: An introduction to Topic 2</span>
+                    <span class="font-weight-bold">Thursday: Machine learning and bioinformatics</span><br/>
+                    <i>Note: lectures on Thursday are live via zoom and not pre-recorded.</i>
                 </p>
                 <ul>
                     <li>
-                        <a href="https://docs.google.com/presentation/d/1Jq4MEGtroW29mz9i15rk83JEFmEa2wonziFkP1Hjy40/edit?usp=sharing">Slides</a>
-                    </li>
-                    <li>
-                        <a href="notes.html">Notes</a>
-                    </li>
-                    <li>
-                        <a href="https://colab.research.google.com/drive/1ow0K8V_wJA833E0DaDgKJI-jVazdpGpc">Exercises</a>
+                        <b>Machine learning and bioinformatics</b><br/>
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                 </ul>
             </div>
             <div class="coursemodule">
                 <p>
-                    <span class="font-weight-bold">Day 5: Tying it all together</span>
+                    <span class="font-weight-bold">Friday: Natural Language processing and putting it all together</span>
                 </p>
                 <ul>
                     <li>
-                        <a href="https://docs.google.com/presentation/d/1Jq4MEGtroW29mz9i15rk83JEFmEa2wonziFkP1Hjy40/edit?usp=sharing">Slides</a>
+                        <b>Natural language processing</b><br/>
+                        Lecture
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                     <li>
-                        <a href="notes.html">Notes</a>
-                    </li>
-                    <li>
-                        <a href="#">Summative assessment</a>
-                    </li>
-                    <li>
-                        <a href="https://colab.research.google.com/drive/1ow0K8V_wJA833E0DaDgKJI-jVazdpGpc">Exercises</a>
+                        <b>Putting it all together</b><br/>
+                        Lecture
+                        &middot;
+                        Colab notebook
+                        &middot;
+                        Exercises
                     </li>
                 </ul>
             </div>
@@ -158,7 +243,8 @@
         </div>
         <footer class="page-footer font-small">
             <div class="text-center">
-                This summer course is organized by <a href="#">Group 1</a> and <a href="#">Group 2</a>.
+                This summer course is organized by the <a href="https://ycmi.yale.edu">Yale Center for Medical Informatics</a>
+                and the <a href="https://medicine.yale.edu/cbds/">Center for Biomedical Data Science</a>.
             </div>
         </footer>
     </body>
