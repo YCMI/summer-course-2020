@@ -1,7 +1,7 @@
 <!doctype html>
 
-<html>
-    <!--
+<html lang="en">
+<!--
         Edited from:
 
         Course website mockup
@@ -10,277 +10,322 @@
 
         Robert A. McDougal
         March 30, 2020
-    -->
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Introduction to Biomedical Data Science and Health Informatics summer course</title>
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>        
-        <link
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-            crossorigin="anonymous"></script>
-        <style>
-            .coursemodule {
-                border: 1px black solid;
-                padding: 1em;
-                margin-top: 0.5em;
-                margin-bottom: 0.5em;
-            }
-            .page-footer {
-                position: fixed;
-                background-color: black;
-                color: white !important;
-                bottom: 0em;
-                width: 100vw;
-            }
-            li {
-                padding-bottom: 0.5em;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container" id="maindiv">
-            <h1>
-                Introduction to Biomedical Data Science and Health Informatics
-            </h1>
-            <h3>
-                June 8, 2020 - June 12, 2020
-            </h3>
-            <br/><br/>
-            <h4>Overview</h4>
-            <p>
-                Join us for an introduction to basic biomedical data science knowledge and health
-                informatics skills. No previous experience is required.
-            </p>
-            <p>
-                Most lectures are available in advance via the links below, although Thursday's 
-                lecture will only be available as a live-stream on Thursday morning. Office hours
-                will be available in the mornings via Zoom to answer questions about the lectures.
-                The afternoons starting at 1pm will begin with a brief Q&A, followed by hands-on
-                exercises (also linked below) via Zoom.
-            </p>
-            <p>
-We will be using <b>Piazza</b> for class discussion. 
-The system is highly catered to getting you help fast and efficiently from classmates, the TAs, and ourselves. 
-Rather than emailing questions to the teaching staff, post your questions on Piazza.
- We'll be conducting all class-related discussion here. 
-The quicker you begin asking questions on Piazza (rather than via emails), the quicker you'll benefit from the collective knowledge of your classmates and instructors. 
-We encourage you to ask questions when you're struggling to understand a concept—you can even do so anonymously.
 
-Find our class signup link at: <a href="https://piazza.com/yale/summer2020/ycmi_cbdssummercourse">https://piazza.com/yale/summer2020/ycmi_cbdssummercourse</a>
-</p>
-            <p>Communication in Piazza is facilitated by notes. Notes are organized into <em>folders</em>, with each folder corresponding to a content area for the course. Please <strong>browse through the questions that have already been asked before asking a question</strong>, as someone else may have already asked your question!</p>
-<p>Posts should be typed as <em>questions</em>, asking the class about a specific question you have. If you know the answer, feel free to answer questions and collaborate with your fellow students, however, instructors will be monitoring the Q&amp;A to assist during the course.</p>
+        Slightly modified by Edel Aron - June 2, 2020
+    -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Introduction to Biomedical Data Science and Health Informatics summer course</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <style>
+        .container {
+            max-width: 900px;
+        }
+
+        .coursemodule {
+            border: 3px #BDBDBD solid;
+            padding: 1em;
+            padding-bottom: 0em;
+            margin-top: 1em;/
+        }
+
+        .page-footer {
+            position: fixed;
+            background-color: black;
+            color: white !important;
+            bottom: 0em;
+            width: 100vw;
+            text-align: center;
+        }
+
+        #title {
+            text-align: center;
+        }
+
+        hr {
+            border-top: 2px #BDBDBD solid;
+        }
+
+        h1 {
+            color: #CC003D;
+        }
+
+        h3 {
+            color: #FF1F62;
+        }
+
+        a {
+            font-weight: 500;
+            color: #00AEFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="maindiv">
+        <div id="title">
+            <h1>Introduction to Biomedical Data Science<br />and Health Informatics</h1>
+            <h4>June 8th, 2020 - June 12th, 2020</h4>
+        </div>
+        <hr>
+        <h3>Overview</h3>
+        <h5>Welcome!</h5>
+        <p>
+            Join us for an introduction to basic biomedical data science knowledge and health
+            informatics skills. This course is targeted for beginners in informatics. <em>No previous experience is required.</em>
+            However, if programming is completely new to you, we encourage you to check out the introductory lecture for
+            Harvard's CS50 course: <a href="https://www.youtube.com/watch?v=jjqgP9dpD1k">Computational Thinking</a>.
+        </p>
+        <p>
+            Most lectures are available in advance via the links below, although Thursday's
+            lecture will only be available as a live-stream on Thursday morning. Morning office hours (<strong>9am to
+                12pm</strong>)
+            will be available via Zoom to answer questions about the lectures. Afternoon office hours (<strong>1pm to
+                5pm</strong>) will begin with a brief Q&A, followed by hands-on exercises (also linked below) via Zoom.
+        </p>
+        <h5>Communication</h5>
+        <p>
+            We will be using <strong>Piazza</strong> for class discussion.
+            The system is highly catered to getting you help fast and efficiently from classmates, the TAs, and
+            ourselves. <em>Rather than emailing questions to the teaching staff, post your questions on Piazza.</em> We'll be
+            conducting all class-related discussion here. The quicker you begin asking questions on Piazza (rather than
+            via emails), the quicker you'll benefit from the collective knowledge of your classmates and instructors. We
+            encourage you to ask questions when you're struggling to understand a concept - you can even do so
+            anonymously.
+
+            You can find our class signup link here:
+            <a href="https://piazza.com/yale/summer2020/ycmi_cbdssummercourse">https://piazza.com/yale/summer2020/ycmi_cbdssummercourse</a>.
+        </p>
+        <p>
+            Communication in Piazza is facilitated by notes. Notes are organized into <em>folders</em>, with each folder
+            corresponding to a content area for the course. <strong>Please browse through the questions that have
+                already been asked before asking a question</strong>, as someone else may have already asked your
+            question!
+        </p>
+        <p>
+            Posts should be typed as <em>questions</em>, asking the class about a specific question you have. If you
+            know the answer, feel free to answer questions and collaborate with your fellow students, however,
+            instructors will be monitoring the Q&amp;A to assist during the course.
+        </p>
+        <p>
+        <h3>Class Structure</h3>
+        <p>
+            We are using what is known as an <strong>inverted classroom structure</strong>, where class time
+            is focused on applying the material. An inverted classroom is one in which the
+            class time is spent doing those tasks which would traditionally take place outside
+            of the classroom and vice versa. As such, class time is spent reviewing problem sets,
+            expounding on concepts with input from students, rather than the didactic relaying
+            of information. That information transmission is relegated to the students'
+            non-instructional time, through such methods as pre-recorded lectures, exercises
+            or reading material. This shift in structure requires a different investiture of
+            resources from the student, and as a result the incentives required have been found
+            to shift in response:
+        </p>
+        <ol>
+            <li>Reviewing the material provided for each lecture, be it readings, exercises
+                or pre-recorded lectures is crucial for functioning in an inverted classroom.</li>
+            <li>Classroom time is predominantly an exercise in information integration,
+                following both the thread of discussion and relating it to the student's
+                own skill level. <em>Active learning is a must.</em></li>
+            <li>As such, student reflection and conversing with instructors and making sure
+                skill development is taking apace with the content delivered is a key to
+                successful learning.</li>
+        </ol>
+        </p>
+        <h3>Course Materials</h3>
+        <div>
             <p>
-            <h3>Class Structure</h3>
-                We are using what is known as an inverted classroom structure, where class time
-                is focused on applying the material. An inverted classroom is one in which the 
-                class time is spent doing those tasks which would traditionally take place outside
-                of the classroom and vice versa. As such, class time is spent reviewing problem sets,
-                expounding on concepts with input from students, rather than the didactic relaying
-                of information. That information transmission is relegated to the students'
-                non-instructional time, through such methods as pre-recorded lectures, exercises
-                or reading material. This shift in structure requires a different investiture of
-                resources from the student, and as a result the incentives required have been found
-                to shift in response:
-                <ol>
-                    <li>Reviewing the material provided for each lecture, be it readings, exercises 
-                        or pre-recorded lectures is crucial for functioning in an inverted classroom.</li>
-                    <li>Classroom time is predominantly an exercise in information integration, 
-                        following both the thread of discussion and relating it to the student's 
-                        own skill level. Active learning is a must.</li>
-                    <li>As such, student reflection and conversing with instructors and making sure 
-                        skill development is taking apace with the content delivered is a key to 
-                        successful learning.</li>
-                </ol>
+                The data for the course can be found in <a
+                    href="https://drive.google.com/drive/folders/1A7slSHl33FXksHDH1ssw4ug_2W_hJr97?usp=sharing">this
+                    Google Drive folder</a>. To add it to your own Google Drive, click on the course folder at the top
+                    next to the "Shared with me" header, select "Add shortcut to drive" from the dropdown and then
+                    create the shortcut by selecting "My Drive" (or your subfolder of choice).
             </p>
-            <h4>Preparing for the course</h4>
-            <p>
-                This course is targeted for beginners in informatics. However, if programming
-                is completely new to you, we encourage you to check out the introductory lecture for Harvard's
-                CS50, entitled <a href="https://www.youtube.com/watch?v=jjqgP9dpD1k">Computational Thinking</a>.
-            </p>
-            <p>
-                <span class="font-weight-bold">On the day of the course</span>,
-                you will need to be able to provide your own computer and internet connection.
-            </p>
-            
-            <h4>Course material</h4>
+        </div>
         <div class="coursemodule">
-            <p>The data for the course can be found here: <a href="https://drive.google.com/drive/folders/1A7slSHl33FXksHDH1ssw4ug_2W_hJr97?usp=sharing">https://drive.google.com/drive/folders/1A7slSHl33FXksHDH1ssw4ug_2W_hJr97?usp=sharing</a>
-                To add this to your Google Drive, click on the course folder at the top at the "Shared with me" header, and from the dropdown, select "Add shortcut to drive", and create the shortcut, selecting "My Drive".
+            <h5>Monday: An Introduction to Python for Data Science</h5>
+            <ul>
+                <li>
+                    Basic calculations, variables, data types<br />
+                    <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=152d48cf-a61a-4d62-8cbb-aba500372e48">Lecture (20m 2s)</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/16e2NJaDh1WqON6KQnZywY1yM84swvPV9">Colab notebook</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1ZsllkialKF5sPzITq2cjLZJNAAt2wQ61">Exercises</a>
+                </li>
+                <li>
+                    Functions, Methods, f-strings<br />
+                    <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=348668a4-cc9f-4ba9-9771-aba5004a7abc">Lecture (24m 12s)</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/16e2NJaDh1WqON6KQnZywY1yM84swvPV9">Colab notebook</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1vvBNZxUu9C3lgFP6RvpAulb0cbzpkuQe?usp=sharing">Exercises</a>
+                </li>
+                <li>
+                    Looping (for loops) and making choices (if statements)<br />
+                    Lecture (30m 23s)
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1uB8hsDyIsQuC7aaXuefSOFZMN16Yht4K">Colab notebook</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1gYztDkHWBFH85eraq3k_DXl-zk0PKA6t">Exercises</a>
+                </li>
+                <li>
+                    Loading and using libraries (modules)<br />
+                    <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=50f7d4de-1a28-45c7-80aa-abc9015a4eb2">Lecture (9m 34s)</a>
+                    &middot;
+                    <a href="https://github.com/YCMI/summer-course-2020/raw/master/python4.pdf">Slides</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1WsPNr5HXFRw-qJOqIwrc1rVjLWGKGsgk?usp=sharing">Exercises</a>
+                </li>
+                <li>
+                    Loading and manipulating data with pandas<br />
+                    Lecture
+                    &middot;
+                    Colab notebook
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1gwbVrJhWUsvgroeJYQ9TclGikO5ztBrK">Exercises</a>
+                </li>
+                <li>
+                    Visualizing data with ggplot<br />
+                    Lecture
+                    &middot;
+                    Colab notebook
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1fixIagUGLaXrEJN-6r0gvOZMa0Lv9Vpd?usp=sharing">Exercises</a>
+                </li>
+            </ul>
+        </div>
+        <div class="coursemodule">
+            <h5>Tuesday: Data Management and Databases</h5>
+            <ul>
+                <li>
+                    Data Management and Databases<br />
+                    Lecture
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/12umO6IEQx5uXBhlozO6Dv3C2qZWPz_Pw#scrollTo=8dilq1NK-jkD">Colab notebook</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1izEHWLTRD35dk4abdsTH-ZLcgQJFQKIm#scrollTo=qj5u-xJY3KfU">Exercises</a>
+                </li>
+            </ul>
+        </div>
+        <div class="coursemodule">
+            <h5>Wednesday: Data Cleaning and Data Visualization</h5>
+            <ul>
+                <li>Lectures and Slides
+                    <ul>
+                        <li>
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/grammar-of-graphics.pdf">The Grammar of Graphics</a> (WIP)
+                        </li>
+                        <li>
+                            Data Exploration<br />
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-exploration.pdf">Slides</a>
+                        </li>
+                        <li>
+                            Data Cleaning I: Overview<br />
+                            <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=f9ffe84d-dfc9-4b7a-a849-abca00048b72">Lecture
+                                (6m 4s)</a>
+                            &middot;
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-1.pdf">Slides</a>
+                        </li>
+                        <li>
+                            Data Cleaning II: Common challenges<br />
+                            <a
+                                href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-2.pdf">Slides</a>
+                        </li>
+                        <li>
+                            Data Cleaning III: Missing variables I: What does it mean
+                            <br />
+                            <a
+                                href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=9c87f81f-994e-4464-929f-abc9017ad780">Lecture
+                                (7m 27s)</a> &middot;
+                            <a
+                                href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-3.pdf">Slides</a>
+                        </li>
+                        <li>
+                            Data Cleaning IV: Missing variables II: Why is it missing and what can be done<br />
+                            <a
+                                href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-4.pdf">Slides</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>Exercises
+                    <ul>
+                        <li>
+                            <a
+                                href="https://colab.research.google.com/drive/1ZxwrdcqYm7dujW_EyNEfG3tgyzQWBBpA?usp=sharing">Data
+                                Cleaning</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://colab.research.google.com/drive/141K00DQ9O5iKmB0lHRNTqk6J0Ozcp3ez?usp=sharing">Data
+                                Visualization</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="coursemodule">
+            <h5>Thursday: Machine Learning and Bioinformatics</h5>
+            <p>
+                <i>Note: lectures on Thursday are live via Zoom and not pre-recorded.</i>
             </p>
+            <ul>
+                <li>
+                    Machine Learning and Bioinformatics<br />
+                    <a
+                        href="https://github.com/YCMI/summer-course-2020/raw/master/Machine_Learning_SummerCourse_6_11_20.pdf">Machine
+                        Learning slides</a>
+                    &middot;
+                    <a
+                        href="https://github.com/YCMI/summer-course-2020/raw/master/Bioinformatics_Lecture_Summer_Course_6_11_20.pdf">Bioinformatics
+                        slides</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1-ZrZXvajx2vy3Q-sDQn5hVHoZg5YMODm?usp=sharing">Exercises
+                        1 (disease classification)</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1lxcGLgXEJNDBn8b-0RwGs44TO4C8HLeM?usp=sharing">Exercises
+                        2 (warfarin)</a>
+                </li>
+            </ul>
         </div>
-            <div class="coursemodule">
-                <p>
-                    <span class="font-weight-bold">Monday: An introduction to Python for Data Science</span>
-                </p>
-                <ul>
-                    <li>
-                        <b>Basic calculations, variables, data types</b><br/>
-                        <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=152d48cf-a61a-4d62-8cbb-aba500372e48">Lecture (20m 2s)</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/16e2NJaDh1WqON6KQnZywY1yM84swvPV9">Colab notebook</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1ZsllkialKF5sPzITq2cjLZJNAAt2wQ61">Exercises</a>
-                    </li>
-                    <li>
-                        <b>Functions, Methods, f-strings</b><br/>
-                        <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=348668a4-cc9f-4ba9-9771-aba5004a7abc">Lecture (24m 12s)</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/16e2NJaDh1WqON6KQnZywY1yM84swvPV9">Colab notebook</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1vvBNZxUu9C3lgFP6RvpAulb0cbzpkuQe?usp=sharing">Exercises</a>
-                    </li>
-                    <li>
-                        <b>Looping (for loops) and making choices (if statements)</b><br/>
-                        Lecture (30m 23s)
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1uB8hsDyIsQuC7aaXuefSOFZMN16Yht4K">Colab notebook</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1gYztDkHWBFH85eraq3k_DXl-zk0PKA6t">Exercises</a>
-                    </li>
-                    <li>
-                        <b>Loading and using libraries (modules)</b><br/>
-                        <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=50f7d4de-1a28-45c7-80aa-abc9015a4eb2">Lecture (9m 34s)</a>
-                        &middot;
-                        <a href="https://github.com/YCMI/summer-course-2020/raw/master/python4.pdf">Slides</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1WsPNr5HXFRw-qJOqIwrc1rVjLWGKGsgk?usp=sharing">Exercises</a>
-                    </li>
-                    <li>
-                        <b>Loading and manipulating data with pandas</b><br/>
-                        Lecture
-                        &middot;
-                        Colab notebook
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1gwbVrJhWUsvgroeJYQ9TclGikO5ztBrK">Exercises</a>
-                    </li>
-                    <li>
-                        <b>Visualizing data with ggplot</b><br/>
-                        Lecture
-                        &middot;
-                        Colab notebook
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1fixIagUGLaXrEJN-6r0gvOZMa0Lv9Vpd?usp=sharing">Exercises</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="coursemodule">
-                <p>
-                    <span class="font-weight-bold">Tuesday: Data Management and Databases</span>
-                </p>
-                <ul>
-                    <li>
-                        <b>Databases and Data management</b><br/>
-                        Lecture
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/12umO6IEQx5uXBhlozO6Dv3C2qZWPz_Pw#scrollTo=8dilq1NK-jkD">Lecture colab notebook</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1izEHWLTRD35dk4abdsTH-ZLcgQJFQKIm#scrollTo=qj5u-xJY3KfU">Exercises</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="coursemodule">
-                <p>
-                    <span class="font-weight-bold">Wednesday: Data cleaning and Data Visualization</span>
-                </p>
-                <ul>
-                    <li>Lectures and Slides
-                        <ul>
-                            <li>
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/grammar-of-graphics.pdf">The Grammar of Graphics</a> (WIP)
-                            </li>
-                            <li>
-                                Data Exploration<br/>
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-exploration.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning I: Overview<br/>
-                                <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=f9ffe84d-dfc9-4b7a-a849-abca00048b72">Lecture (6m 4s)</a>
-                                &middot;
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-1.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning II: Common challenges<br/>
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-2.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning III: Missing variables I: What does it mean
-                                <br/>
-                                <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=9c87f81f-994e-4464-929f-abc9017ad780">Lecture (7m 27s)</a> &middot;
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-3.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning IV: Missing variables II: Why is it missing and what can be done<br/>
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-4.pdf">Slides</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>Exercises
-                        <ul>
-                            <li>
-                                <a href="https://colab.research.google.com/drive/1ZxwrdcqYm7dujW_EyNEfG3tgyzQWBBpA?usp=sharing">Data cleaning</a>
-                            </li>
-                            <li>
-                                <a href="https://colab.research.google.com/drive/141K00DQ9O5iKmB0lHRNTqk6J0Ozcp3ez?usp=sharing">Data Visualization</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="coursemodule">
-                <p>
-                    <span class="font-weight-bold">Thursday: Machine learning and bioinformatics</span><br/>
-                    <i>Note: lectures on Thursday are live via zoom and not pre-recorded.</i>
-                </p>
-                <ul>
-                    <li>
-                        <b>Machine learning and bioinformatics</b><br/>
-                        <a href="https://github.com/YCMI/summer-course-2020/raw/master/Machine_Learning_SummerCourse_6_11_20.pdf">Machine learning slides</a>
-                        &middot;
-                        <a href="https://github.com/YCMI/summer-course-2020/raw/master/Bioinformatics_Lecture_Summer_Course_6_11_20.pdf">Bioinformatics slides</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1-ZrZXvajx2vy3Q-sDQn5hVHoZg5YMODm?usp=sharing">Exercises 1 (disease classification)</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1lxcGLgXEJNDBn8b-0RwGs44TO4C8HLeM?usp=sharing">Exercises 2 (warfarin)</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="coursemodule">
-                <p>
-                    <span class="font-weight-bold">Friday: Natural Language processing and putting it all together</span>
-                </p>
-                <ul>
-                    <li>
-                        <b>Natural language processing</b><br/>
-                        <a href="https://github.com/YCMI/summer-course-2020/raw/master/introduction%20to%20NLP-%20SamahFodeh.pptx">Slides</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1j3eb04ad4nGhoeLZzsawJ7oZ0Cnj91Pk?usp=sharing">Colab notebook</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/107_L6ZYtY5G6EHoDDuYC8FUiy0Ye5qyg?usp=sharing">Exercises</a>
-                    </li>
-                    <li>
-                        <b>Putting it all together</b><br/>
-                        <a href="https://colab.research.google.com/drive/1VV3O1CVWrKDKm_nGTqBVXSA1OYIdWpCM?usp=sharing">Exercises</a> (WIP)
-                    </li>
-                </ul>
-            </div>
-            <div style="height:5em"></div>
+        <div class="coursemodule">
+            <h5>Friday: Natural Language Processing and Putting It All Together</h5>
+            <ul>
+                <li>
+                    Natural Language Processing<br />
+                    <a
+                        href="https://github.com/YCMI/summer-course-2020/raw/master/introduction%20to%20NLP-%20SamahFodeh.pptx">Slides</a>
+                    &middot;
+                    <a href="https://colab.research.google.com/drive/1j3eb04ad4nGhoeLZzsawJ7oZ0Cnj91Pk?usp=sharing">Colab
+                        notebook</a>
+                    &middot;
+                    <a
+                        href="https://colab.research.google.com/drive/107_L6ZYtY5G6EHoDDuYC8FUiy0Ye5qyg?usp=sharing">Exercises</a>
+                </li>
+                <li>
+                    Putting It All Together<br />
+                    <a
+                        href="https://colab.research.google.com/drive/1VV3O1CVWrKDKm_nGTqBVXSA1OYIdWpCM?usp=sharing">Exercises</a>
+                    (WIP)
+                </li>
+            </ul>
         </div>
-        <footer class="page-footer font-small">
-            <div class="text-center">
-                This summer course is organized by the <a href="https://ycmi.yale.edu">Yale Center for Medical Informatics</a>
-                and the <a href="https://medicine.yale.edu/cbds/">Center for Biomedical Data Science</a>.
-            </div>
-        </footer>
-    </body>
+        <div style="height:5em"></div>
+    </div>
+    <footer class="page-footer">
+        <div>
+            This summer course is organized by the <a href="https://medicine.yale.edu/ycmi/" target="_blank">Yale Center
+                for Medical Informatics</a> and the <a href="https://medicine.yale.edu/cbds/" target="_blank">Center for
+                Biomedical Data Science</a>.
+        </div>
+    </footer>
+</body>
 </html>
