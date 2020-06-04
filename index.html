@@ -38,19 +38,21 @@
         }
 
         .first-col {
-            width: 55%;
+            width: 50%;
         }
 
         .second-col {
             width: 20%;
+
         }
 
         .third-col {
             width: 20%;
+
         }
 
         .fourth-col {
-            width: 15%;
+            width: 10%;
         }
 
         .page-footer {
@@ -82,6 +84,21 @@
             font-weight: 500;
             color: #63AAFF;
         }
+
+        table {
+            table-layout: fixed;
+        }
+
+        td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media only screen and (max-width: 600px) {
+            table {
+                table-layout: fixed;
+            }
+}
     </style>
 </head>
 
@@ -101,11 +118,11 @@
             Harvard's CS50 course: <a href="https://www.youtube.com/watch?v=jjqgP9dpD1k">Computational Thinking</a>.
         </p>
         <p>
-            Most lectures are available in advance via the links below, although Thursday's
+            Most lectures are <a href="#materials">available in advance</a>, although Thursday's
             lecture will only be available as a live-stream on Thursday morning. Morning office hours (<strong>9am to
                 12pm</strong>)
-            will be available via Zoom to answer questions about the lectures. Afternoon office hours (<strong>1pm to
-                5pm</strong>) will begin with a brief Q&A, followed by hands-on exercises (also linked below) via Zoom.
+            will be available via Zoom to answer questions about the lectures. Afternoons (<strong>1pm to
+                5pm</strong>) will begin with a brief Q&A, followed by <a href="#materials">hands-on exercises</a> via Zoom.
         </p>
         <h5>Communication</h5>
         <p>
@@ -183,7 +200,6 @@
             </div>
             <div class="coursemodule">
                 <h5>Monday: An Introduction to Python for Data Science</h5>
-                <br />
                 <table class="table table-borderless table-hover table-sm">
                     <tbody>
                       <tr>
@@ -264,7 +280,7 @@
                             Lecture
                         </td>
                         <td class="third-col">
-                            Colab notebook
+                            <a href="https://www.dropbox.com/s/wo3rti32oyx58i4/python6.pdf?dl=1">Slides</a>
                         </td>
                         <td class="fourth-col">
                             <a href="https://colab.research.google.com/drive/104WVmuKEJ5_L4XADrmH_BiUJUeXdDru1?usp=sharing">Exercises</a>
@@ -296,54 +312,104 @@
             </div>
             <div class="coursemodule">
                 <h5>Wednesday: Data Cleaning and Data Visualization</h5>
+                <h6>Lectures and Slides</h6>
+                <table class="table table-borderless table-hover table-sm">
+                    <tbody>
+                      <tr>
+                        <td class="first-col">
+                            The Grammar of Graphics
+                        </td>
+                        <td class="second-col">
+                            &nbsp;
+                        </td>
+                        <td class="third-col">
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/grammar-of-graphics.pdf">Slides</a> (WIP)
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="first-col">
+                            Data Exploration
+                        </td>
+                        <td class="second-col">
+                            &nbsp;
+                        </td>
+                        <td>
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-exploration.pdf">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="first-col">
+                            Data Cleaning I: Overview
+                        </td>
+                        <td class="second-col">
+                            <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=f9ffe84d-dfc9-4b7a-a849-abca00048b72">Lecture
+                                (6m 4s)</a>
+                        </td>
+                        <td class="third-col">
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-1.pdf">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="first-col">
+                            Data Cleaning II: Common challenges
+                        </td>
+                        <td class="second-col">
+                            &nbsp;
+                        </td>
+                        <td class="third-col">
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-2.pdf">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="first-col">
+                            Data Cleaning III: Missing variables I: What does it mean
+                        </td>
+                        <td class="second-col">
+                            <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=9c87f81f-994e-4464-929f-abc9017ad780">Lecture (7m 27s)</a>
+                        </td>
+                        <td class="third-col">
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-3.pdf">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="first-col">
+                            Data Cleaning IV: Missing variables II: Why is it missing and what can be done
+                        </td>
+                        <td class="second-col">
+                            &nbsp;
+                        </td>
+                        <td class="third-col">
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-4.pdf">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                <h6>Exercises</h6>
                 <ul>
-                    <li>Lectures and Slides
-                        <ul>
-                            <li>
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/grammar-of-graphics.pdf">The Grammar of Graphics</a> (WIP)
-                            </li>
-                            <li>
-                                Data Exploration<br />
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-exploration.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning I: Overview<br />
-                                <a href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=f9ffe84d-dfc9-4b7a-a849-abca00048b72">Lecture
-                                    (6m 4s)</a>
-                                &middot;
-                                <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-1.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning II: Common challenges<br />
-                                <a
-                                    href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-2.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning III: Missing variables I: What does it mean
-                                <br />
-                                <a
-                                    href="https://yale.hosted.panopto.com/Panopto/Pages/Viewer.aspx?tid=9c87f81f-994e-4464-929f-abc9017ad780">Lecture
-                                    (7m 27s)</a> &middot;
-                                <a
-                                    href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-3.pdf">Slides</a>
-                            </li>
-                            <li>
-                                Data Cleaning IV: Missing variables II: Why is it missing and what can be done<br />
-                                <a
-                                    href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-4.pdf">Slides</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="https://colab.research.google.com/drive/1ZxwrdcqYm7dujW_EyNEfG3tgyzQWBBpA?usp=sharing">Data
+                            Cleaning</a>
                     </li>
-                    <li>Exercises
-                        <ul>
-                            <li>
-                                <a href="https://colab.research.google.com/drive/1ZxwrdcqYm7dujW_EyNEfG3tgyzQWBBpA?usp=sharing">Data
-                                    Cleaning</a>
-                            </li>
-                            <li>
-                                <a href="https://colab.research.google.com/drive/1M9A6i_1SWy1TXKhMl2ykncRJSayutxhq?usp=sharing">Data Visualization</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="https://colab.research.google.com/drive/1M9A6i_1SWy1TXKhMl2ykncRJSayutxhq?usp=sharing">Data Visualization</a>
                     </li>
                 </ul>
             </div>
@@ -352,46 +418,87 @@
                 <p>
                     <i>Note: lectures on Thursday are live via Zoom and not pre-recorded.</i>
                 </p>
+                <h6>Slides</h6>
+                <table class="table table-borderless table-hover table-sm">
+                    <tbody>
+                      <tr>
+                        <td class="first-col">
+                            Machine Learning
+                        </td>
+                        <td class="second-col">
+                            &nbsp;
+                        </td>
+                        <td class="third-col">
+                            <a
+                            href="https://github.com/YCMI/summer-course-2020/raw/master/Machine_Learning_SummerCourse_6_11_20.pdf">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="first-col">
+                            Bioinformatics
+                        </td>
+                        <td class="second-col">
+                            &nbsp;
+                        </td>
+                        <td class="third-col">
+                            <a
+                            href="https://github.com/YCMI/summer-course-2020/raw/master/Bioinformatics_Lecture_Summer_Course_6_11_20.pdf">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                <h6>Exercises</h6>
                 <ul>
                     <li>
-                        Machine Learning and Bioinformatics<br />
-                        <a
-                            href="https://github.com/YCMI/summer-course-2020/raw/master/Machine_Learning_SummerCourse_6_11_20.pdf">Machine
-                            Learning slides</a>
-                        &middot;
-                        <a
-                            href="https://github.com/YCMI/summer-course-2020/raw/master/Bioinformatics_Lecture_Summer_Course_6_11_20.pdf">Bioinformatics
-                            slides</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1-ZrZXvajx2vy3Q-sDQn5hVHoZg5YMODm?usp=sharing">Exercises
-                            1 (disease classification)</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1lxcGLgXEJNDBn8b-0RwGs44TO4C8HLeM?usp=sharing">Exercises
-                            2 (warfarin)</a>
+                        <a href="https://colab.research.google.com/drive/1-ZrZXvajx2vy3Q-sDQn5hVHoZg5YMODm?usp=sharing">Disease Classification</a>
+                    </li>
+                    <li>
+                        <a href="https://colab.research.google.com/drive/1lxcGLgXEJNDBn8b-0RwGs44TO4C8HLeM?usp=sharing">Warfarin</a>
                     </li>
                 </ul>
             </div>
             <div class="coursemodule">
                 <h5>Friday: Natural Language Processing and Putting It All Together</h5>
-                <ul>
-                    <li>
-                        Natural Language Processing<br />
-                        <a
-                            href="https://github.com/YCMI/summer-course-2020/raw/master/introduction%20to%20NLP-%20SamahFodeh.pptx">Slides</a>
-                        &middot;
-                        <a href="https://colab.research.google.com/drive/1j3eb04ad4nGhoeLZzsawJ7oZ0Cnj91Pk?usp=sharing">Colab
-                            notebook</a>
-                        &middot;
-                        <a
+                <table class="table table-borderless table-hover table-sm">
+                    <tbody>
+                      <tr>
+                        <td class="first-col">
+                            Natural Language Processing
+                        </td>
+                        <td class="second-col">
+                            <a href="https://colab.research.google.com/drive/1j3eb04ad4nGhoeLZzsawJ7oZ0Cnj91Pk?usp=sharing">Colab notebook</a>
+                        </td>
+                        <td class="third-col">
+                            <a href="https://github.com/YCMI/summer-course-2020/raw/master/introduction%20to%20NLP-%20SamahFodeh.pptx">Slides</a>
+                        </td>
+                        <td class="fourth-col">
+                            <a
                             href="https://colab.research.google.com/drive/107_L6ZYtY5G6EHoDDuYC8FUiy0Ye5qyg?usp=sharing">Exercises</a>
-                    </li>
-                    <li>
-                        Putting It All Together<br />
-                        <a
-                            href="https://colab.research.google.com/drive/1VV3O1CVWrKDKm_nGTqBVXSA1OYIdWpCM?usp=sharing">Exercises</a>
-                        (WIP)
-                    </li>
-                </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="first-col">
+                            Putting It All Together
+                        </td>
+                        <td class="second-col">
+                            &nbsp;
+                        </td>
+                        <td class="third-col">
+                            &nbsp;
+                        </td>
+                        <td class="fourth-col">
+                            <a
+                            href="https://colab.research.google.com/drive/1VV3O1CVWrKDKm_nGTqBVXSA1OYIdWpCM?usp=sharing">Exercises</a> (WIP)
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div style="height:5em"></div>
