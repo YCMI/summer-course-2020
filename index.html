@@ -34,7 +34,7 @@
             border: 3px #BDBDBD solid;
             padding: 1em;
             padding-bottom: 0em;
-            margin-top: 1em;/
+            margin-top: 1em;
         }
 
         .first-col {
@@ -83,6 +83,7 @@
         a {
             font-weight: 500;
             color: #63AAFF;
+            word-wrap: break-word;
         }
 
         table {
@@ -95,10 +96,27 @@
         }
 
         @media only screen and (max-width: 600px) {
-            table {
-                table-layout: fixed;
+            .empty {
+                display: none;
             }
-}
+
+            .first-col {
+                width: 100%;
+            }
+
+            .second-col, .third-col, .fourth-col {
+                width: 100%;
+                text-indent: 10%;
+            }
+
+            table, tbody, td, tr {
+		        display: block;
+	        }
+
+            td {
+                overflow: visible;
+            }
+        }
     </style>
 </head>
 
@@ -291,24 +309,26 @@
             </div>
             <div class="coursemodule">
                 <h5>Tuesday: Data Management and Databases</h5>
-                <table class="table table-borderless table-hover table-sm">
-                    <tbody>
-                      <tr>
-                        <td class="first-col">
-                            Data Management and Databases
-                        </td>
-                        <td class="second-col">
-                            <a href="https://github.com/YCMI/summer-course-2020/blob/master/research_data_management_and_databases_slides.pdf">Lecture</a>
-                        </td>
-                        <td class="third-col">
-                            <a href="https://colab.research.google.com/drive/12umO6IEQx5uXBhlozO6Dv3C2qZWPz_Pw#scrollTo=8dilq1NK-jkD">Colab notebook</a>
-                        </td>
-                        <td class="fourth-col">
-                            <a href="https://colab.research.google.com/drive/1izEHWLTRD35dk4abdsTH-ZLcgQJFQKIm#scrollTo=qj5u-xJY3KfU">Exercises</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-borderless table-hover table-sm">
+                        <tbody>
+                          <tr>
+                            <td class="first-col">
+                                Data Management and Databases
+                            </td>
+                            <td class="second-col">
+                                <a href="https://github.com/YCMI/summer-course-2020/blob/master/research_data_management_and_databases_slides.pdf">Lecture</a>
+                            </td>
+                            <td class="third-col">
+                                <a href="https://colab.research.google.com/drive/12umO6IEQx5uXBhlozO6Dv3C2qZWPz_Pw#scrollTo=8dilq1NK-jkD">Colab notebook</a>
+                            </td>
+                            <td class="fourth-col">
+                                <a href="https://colab.research.google.com/drive/1izEHWLTRD35dk4abdsTH-ZLcgQJFQKIm#scrollTo=qj5u-xJY3KfU">Exercises</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="coursemodule">
                 <h5>Wednesday: Data Cleaning and Data Visualization</h5>
@@ -319,13 +339,13 @@
                         <td class="first-col">
                             The Grammar of Graphics
                         </td>
-                        <td class="second-col">
+                        <td class="second-col empty">
                             &nbsp;
                         </td>
                         <td class="third-col">
                             <a href="https://github.com/YCMI/summer-course-2020/raw/master/grammar-of-graphics.pdf">Slides</a> (WIP)
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -333,13 +353,13 @@
                         <td class="first-col">
                             Data Exploration
                         </td>
-                        <td class="second-col">
+                        <td class="second-col empty">
                             &nbsp;
                         </td>
-                        <td>
+                        <td class="third-col">
                             <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-exploration.pdf">Slides</a>
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -354,7 +374,7 @@
                         <td class="third-col">
                             <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-1.pdf">Slides</a>
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -362,13 +382,13 @@
                         <td class="first-col">
                             Data Cleaning II: Common challenges
                         </td>
-                        <td class="second-col">
+                        <td class="second-col empty">
                             &nbsp;
                         </td>
                         <td class="third-col">
                             <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-2.pdf">Slides</a>
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -382,7 +402,7 @@
                         <td class="third-col">
                             <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-3.pdf">Slides</a>
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -390,13 +410,13 @@
                         <td class="first-col">
                             Data Cleaning IV: Missing variables II: Why is it missing and what can be done
                         </td>
-                        <td class="second-col">
+                        <td class="second-col empty">
                             &nbsp;
                         </td>
                         <td class="third-col">
                             <a href="https://github.com/YCMI/summer-course-2020/raw/master/data-cleaning-4.pdf">Slides</a>
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -425,14 +445,14 @@
                         <td class="first-col">
                             Machine Learning
                         </td>
-                        <td class="second-col">
+                        <td class="second-col empty">
                             &nbsp;
                         </td>
                         <td class="third-col">
                             <a
                             href="https://github.com/YCMI/summer-course-2020/raw/master/Machine_Learning_SummerCourse_6_11_20.pdf">Slides</a>
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -440,14 +460,14 @@
                         <td class="first-col">
                             Bioinformatics
                         </td>
-                        <td class="second-col">
+                        <td class="second-col empty">
                             &nbsp;
                         </td>
                         <td class="third-col">
                             <a
                             href="https://github.com/YCMI/summer-course-2020/raw/master/Bioinformatics_Lecture_Summer_Course_6_11_20.pdf">Slides</a>
                         </td>
-                        <td class="fourth-col">
+                        <td class="fourth-col empty">
                             &nbsp;
                         </td>
                       </tr>
@@ -486,10 +506,10 @@
                         <td class="first-col">
                             Putting It All Together
                         </td>
-                        <td class="second-col">
+                        <td class="second-col empty">
                             &nbsp;
                         </td>
-                        <td class="third-col">
+                        <td class="third-col empty">
                             &nbsp;
                         </td>
                         <td class="fourth-col">
